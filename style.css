@@ -12,6 +12,8 @@ body{
     animation: bganimation 5s infinite;
     background-position: center;
     background-size: 400%;
+    display: flex;
+    flex-direction: column;
 }
 
  /* Code voor achtergrond animatie*/
@@ -29,72 +31,6 @@ body{
      background-position: 0%, 50%;
   }
 }
-
- /* Code voor Footer*/
-
-footer{
- font-family: 'Prompt', sans-serif;
- font-weight: 200;
- background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
- padding: 40px 0;
-}
-
-.socials-footer{
- text-align: center;
- padding-bottom: 25px;
- color: black;
-}
-
-.socials-footer a{
- font-size: 24px;
- color: inherit;
- border: 1px solid black;
- width: 40px;
- height: 40px;
- line-height: 38px;
- display: inline-block;
- text-align: center;
- border-radius: 50%;
- margin: 0 8px;
- opacity: 0.75;
-}    
-
-.socials-footer a:hover{
- opacity: 0.9;    
-}
-
-footer ul{
- margin-top: 0;
- padding: 0;
- list-style: none;
- font-style: 18px;
- line-height: 1.6;
- margin-bottom: 0;
- text-align: center;
-}
-
-footer ul li a{
- color: inherit;
- text-decoration: none;     
- opacity: 0.8;
-}
-
-footer ul li{
- display: inline-block;
- padding: 0 15px;
-}
-
-footer ul li a:hover{
- opacity: 1;
-}
-
-.copyright{
- margin-top: 15px;
- text-align: center;
- font-size: 13px;
- color: black;
-}
-
 
  /* Code voor Header en Nav*/
 
@@ -146,16 +82,60 @@ nav img{
     width: 100%; 
 }
 
+
+ /* Code voor Footer*/
+
+ footer{
+    font-family: 'Prompt', sans-serif;
+    font-weight: 200;
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+    padding: 40px 0;
+}
+   
+
+footer ul{
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-style: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+   
+footer ul li a{
+    color: inherit;
+    text-decoration: none;     
+    opacity: 0.8;
+}
+   
+footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+   
+footer ul li a:hover{
+    opacity: 1;
+}
+   
+.copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+}
+   
+   
+
  /* Code voor Tekst en buttons op home pagina*/
 
 
 .text-box{
-    width: 90%;
-    color: white;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white; 
+    margin-top: 55px;
     text-align: center;
 }
 
@@ -198,16 +178,30 @@ nav .fas{
 }
 
 .text-toprated{
-    margin: 10px 0 40px;
     text-align: center;
-    font-size: 24px;
     color: white;
     margin-bottom: 4%;
 }
 
+ /* Flexbox code op main van alle pagina's*/
 
- /* Code voor class main-section op alle pagina's*/
+ .main-home{
+    min-height: 62vh;
+    width: 100%;
+    overflow: hidden;
+}
 
+.main-review{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-nearme{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .main-section{
     position: relative;
@@ -216,9 +210,9 @@ nav .fas{
     overflow: hidden;
 }
 
+ /* Code voor class heading op main van alle pagina's*/
+
 .heading{
- display: inline-block;
- position: relative;
  color: #ff4b81;
  font-size: 4vw;
  padding: 20px;
@@ -231,7 +225,7 @@ section .heading b{
  color: white;
 }
 
- /* Code voor grid list op top rated pagina*/
+ /* Code voor lijst op top rated pagina*/
 
 
 .wrapper{
@@ -331,10 +325,22 @@ h2{
  background: white;
 }    
 
+ /* Code voor class map op near me pagina*/
+
+.map{
+ display: flex;
+ justify-content: center;
+ margin-top: 5%;
+ margin-bottom: 8%;    
+}
+
+main img{
+ max-width: 100%;
+}
+
  /* Code voor select section op Reviews pagina*/
 
 main .select{
- top: -550px;
  margin: auto
 }
 
@@ -346,7 +352,7 @@ select{
  outline: 0;
  box-shadow: none;
  border: 0!important;
- background: #5c6664;
+ background: #293280;
  background-image: none;
 }
 
@@ -360,7 +366,7 @@ select::-ms-expand{
  width: 20em;
  height: 3em;    
  line-height: 3;
- background: #5c6664;
+ background: #293280;
  border-radius: .25em;
 }
 
@@ -391,53 +397,22 @@ select{
  /* Code voor Reviews form*/
  
 .container-2{
- display: grid;
- place-items: center;
- text-align: center;
- width: 400px;
- background: #111;
+ max-width: 300px;
+ max-height: 200px;
+ background: #ff4b81;
  padding: 20px 30px;
  border: 1px solid #444;
  border-radius: 5px;
- display: flex;
- align-items: center;
- justify-content: center;
- flex-direction: column;
+ margin-top: 5%;
+ margin-bottom: 5%;
+ margin-left: 1.5%;
 }
-
-.container-2 .star-widget input{
- display: none;
-}
-
-.star-widget label{
- font-size: 40px;
- color: #444;
- padding: 10px;
- float: right;   
- transition: all 0.2s ease;
-}
-
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
- color: #fd4;
-}
-
-input:checked ~ label{
- color: #fd4;  
-}
-
-input#rate-5:checked ~ label{
- color: #fe7;
- text-shadow: 0 0 20px #952;
-}
-
 
 form header{
  width: 100%;
  font-size: 25px;
- color: #Fe7;
- font-weight: 500p;
- margin: 5px 0 20px p;
+ color: #293280;
+ font-weight: bold;
  text-align: center;
  transition: all 0.2s ease;
 }
@@ -452,9 +427,9 @@ form .textarea textarea{
  height: 100%;
  width: 100%;
  outline: none;
- color: #eee;
- border: 1px solid #333;
- background: #222;
+ color: white;
+ border: 1px solid white;
+ background: #293280;
  padding: 10px;
  font-size: 17px; 
  resize: none;
@@ -471,8 +446,8 @@ form .btn button{
  width: 100%;
  border: 1px solid #444;
  outline: none;
- background: #222;
- color: #999;
+ background: #293280;
+ color: white;
  font-size: 17px;
  font-weight: 500;
  text-transform: uppercase; 
@@ -484,9 +459,13 @@ form .btn button:hover{
  background: #1b1b1b;    
 }
 
+ /* Code voor media query*/
 
+@media(max-width: 650px){
 
-@media(max-width: 700px){
+    body{
+        margin: 0;
+    }
 
     nav img{
         width: 80px;
@@ -494,7 +473,7 @@ form .btn button:hover{
 
     .text-box h1{
         font-size: 24px;
-        color: white;
+        color: #ff4b81;
     }
     
     .text-box p{
@@ -503,6 +482,8 @@ form .btn button:hover{
     
     .text-toprated{
       font-size: 15px;    
+      margin-right: 1%;
+      margin-left: 1%;
     }
 
     .nav-links ul li{
@@ -546,22 +527,20 @@ form .btn button:hover{
     .container-2{
       width: 320px;
       height: 300px;
-      margin: auto;
-      position: relative;
-      top: -530px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      margin-top: 5%;
+      
+    }
+    
+    .main-section{
+       margin: 0;  
     }
 
-    .star-widget label{
-        font-size: 30px;
-        padding: 20px 30px;
-        color: #444;
-        padding: 14px;
-        transition: all 0.2s ease;
-    }
-       
+    footer{
+        margin: 0;
+     }
 
 }
